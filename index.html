@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decaf Dessert and Coffee Lab | Premium Beachfront Culinary Lounge</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&viewport=width=device-width" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#111111',
+                        cream: '#FDFBF7',
+                        clay: '#1C1A17',
+                        brass: '#C5A880',
+                        mutedGlow: 'rgba(197, 168, 128, 0.15)'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #1C1A17; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #C5A880; border-radius: 9px; }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+        }
+        .bg-glow { animation: pulseGlow 8s infinite ease-in-out; }
+    </style>
+</head>
+<body class="bg-cream text-obsidian font-sans selection:bg-brass selection:text-obsidian overflow-x-hidden">
+
+    <!-- Premium Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-obsidian/90 backdrop-blur-md border-b border-brass/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-xl tracking-wider text-cream uppercase">Decaf</span>
+                <span class="text-[10px] tracking-[0.25em] text-brass uppercase font-light -mt-1">Dessert & Coffee Lab</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm tracking-wide text-cream/80">
+                <a href="#services" class="hover:text-brass transition-colors">The Concept</a>
+                <a href="#menu" class="hover:text-brass transition-colors">The Lab Menu</a>
+                <a href="#about" class="hover:text-brass transition-colors">Our Story</a>
+                <a href="#testimonials" class="hover:text-brass transition-colors">Reviews</a>
+            </div>
+            <div>
+                <a href="#reserve" class="inline-flex items-center justify-center bg-brass hover:bg-brass/90 text-obsidian px-6 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 rounded-none shadow-lg">
+                    Secure A Table
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Luxury Hero Section -->
+    <section class="relative min-h-screen bg-obsidian flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(197,168,128,0.12)_0%,transparent_70%)]"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-brass/5 blur-3xl bg-glow"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-brass/5 blur-3xl bg-glow" style="animation-delay: -4s;"></div>
+        
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10 py-12">
+            <span class="text-xs uppercase font-semibold tracking-[0.3em] text-brass mb-6 inline-block">An Artisanal Gastronomic Sanctuary</span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl text-cream leading-[1.1] mb-8 tracking-tight">
+                Where Culinary Chemistry <br><span class="italic text-brass font-normal">Meets Beachfront Serenity</span>
+            </h1>
+            <p class="text-cream/60 max-w-2xl mx-auto text-base sm:text-lg font-light leading-relaxed mb-12">
+                Indulge in a premium, custom-designed sensory experience in RAK. From hand-crafted V60 extractions to bespoke, artisanal pastry creations served directly alongside panoramic sea vistas.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#menu" class="w-full sm:w-auto px-8 py-4 bg-brass hover:bg-brass/90 text-obsidian font-semibold text-xs uppercase tracking-widest transition-all duration-300">
+                    Explore Laboratory Menu
+                </a>
+                <a href="#reserve" class="w-full sm:w-auto px-8 py-4 border border-cream/20 hover:border-brass text-cream hover:text-brass font-semibold text-xs uppercase tracking-widest transition-all duration-300">
+                    Request Lounge Booking
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-cream/30 text-xs tracking-widest uppercase flex items-center gap-2 animate-bounce">
+            Scroll to Experience <i class="fa-solid fa-arrow-down text-brass text-[10px]"></i>
+        </div>
+    </section>
+
+    <!-- Value Propositions & Experience Sections -->
+    <section id="services" class="py-24 bg-cream border-b border-brass/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-20">
+                <span class="text-xs uppercase tracking-[0.25em] text-brass font-semibold block mb-3">Curated Gastronomy</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-obsidian">The Lab Experience Pillars</h2>
+                <div class="w-12 h-[1px] bg-brass mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Pillar 1 -->
+                <div class="p-8 bg-white border border-brass/5 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(197,168,128,0.08)]">
+                    <div class="w-12 h-12 bg-obsidian text-brass flex items-center justify-center text-lg mb-8">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-4 text-obsidian">Precision Coffee Lab</h3>
+                    <p class="text-sm text-obsidian/60 leading-relaxed font-light">
+                        Experience bespoke manual brewing configurations including cold drop peaches, Chemex extractions, and signature hand-sourced Brazilian and Ethiopian single-origin beans.
+                    </p>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="p-8 bg-white border border-brass/5 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(197,168,128,0.08)]">
+                    <div class="w-12 h-12 bg-obsidian text-brass flex items-center justify-center text-lg mb-8">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-4 text-obsidian">Artisanal Patisserie</h3>
+                    <p class="text-sm text-obsidian/60 leading-relaxed font-light">
+                        From our iconic Tiramisu Burnt Bliss to Madagascar Vanilla Basque Cheesecakes, each structural layer is crafted to deliver complex, elegant dessert flavor curves.
+                    </p>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="p-8 bg-white border border-brass/5 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(197,168,128,0.08)]">
+                    <div class="w-12 h-12 bg-obsidian text-brass flex items-center justify-center text-lg mb-8">
+                        <i class="fa-solid fa-umbrella-beach"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-4 text-obsidian">Oceanfront Lounge</h3>
+                    <p class="text-sm text-obsidian/60 leading-relaxed font-light">
+                        Unwind completely within premium architectural surroundings featuring an outdoor sunset patio terrace, private dining options, and a pristine structural sea view.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated Interactive Menu Section -->
+    <section id="menu" class="py-24 bg-clay text-cream relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.25em] text-brass font-semibold block mb-3">The Laboratory Codex</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-cream">Featured Masterpieces</h2>
+                </div>
+                <p class="text-cream/50 max-w-md text-sm font-light leading-relaxed mt-4 md:mt-0">
+                    A strictly curated sample from our comprehensive daily culinary registry, optimizing taste profiles across savory and sweet chemistry.
+                </p>
+            </div>
+
+            <!-- Custom Tab Grid Showcase -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Signature Savory Group -->
+                <div>
+                    <h3 class="font-serif text-xl text-brass mb-8 border-b border-cream/10 pb-2 flex justify-between items-center">
+                        <span>Premium Sandwiches & Main Course</span>
+                        <span class="text-xs tracking-widest uppercase font-sans text-cream/40 font-light">Savory Selection</span>
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Signature Wagyu Beef Burger</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 58.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Wagyu Beef, American Cheese, Shallots, Unsalted Butter, Secret house sauce, served in a premium Brioche Bun with Skinny Fries.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Premium Wagyu Platter</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 126.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Tender Wagyu Beef paired with fresh broccoli, white mushrooms, baby potatoes, crispy potato scales, garlic, fresh thyme, and cracked black pepper.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Chicken Katsu Sando</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 52.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Crispy breaded chicken breast paired beautifully with fresh house coleslaw and golden skinny fries inside our homemade signature brioche bun.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signature Sweet Group -->
+                <div>
+                    <h3 class="font-serif text-xl text-brass mb-8 border-b border-cream/10 pb-2 flex justify-between items-center">
+                        <span>Bespoke Manual Brews & Desserts</span>
+                        <span class="text-xs tracking-widest uppercase font-sans text-cream/40 font-light">Sweet Chemistry</span>
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Tiramisu Burnt Bliss</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 41.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Indulgent layers of espresso-soaked ladyfingers combined with velvety mascarpone and a sophisticated twist of caramelized burnt sugar.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Vanilla Basque Cheesecake</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 41.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Creamy dense Basque cheesecake infused completely with authentic Madagascar vanilla beans, delivering a rich caramelized exterior and silky custard core.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Iced V60 Vanilla Taba</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 44.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Hand-crafted signature cold pour-over coffee cleanly extracted and subtly infused with smooth vanilla aromatic notes and a rich Taba structure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="text-xs text-cream/40 mb-4 font-light">Want to browse our complete catalog of hot coffees, together boxes, smoothies, and breakfast balances?</p>
+                <button onclick="openPremiumChat('Can you provide me with the full menu pricing?')" class="inline-flex items-center gap-2 text-xs font-semibold text-brass uppercase tracking-widest hover:text-cream transition-colors">
+                    Request Full Digital Menu Registry <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story / About Section -->
+    <section id="about" class="py-24 bg-cream overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -top-8 -left-8 w-32 h-32 border-t-2 border-l-2 border-brass/30"></div>
+                    <div class="bg-obsidian p-12 text-cream space-y-6 relative z-10 shadow-2xl">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-brass block font-semibold">Architectural Highlights</span>
+                        <ul class="space-y-4 text-xs tracking-wide text-cream/80 font-light">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brass text-[8px]"></i> Panoramic Open Ocean & Beach Views</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brass text-[8px]"></i> Rooftop Lounge & Ambient Outdoor Patio</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brass text-[8px]"></i> Premium Late-Night Dining and Artisan Coffee</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brass text-[8px]"></i> Ample Free On-Site Protected Parking Spaces</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:col-span-7">
+                    <span class="text-xs uppercase tracking-[0.25em] text-brass font-semibold block mb-3">The Narrative Lab</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-obsidian mb-6">A Refined Escape Crafted For Taste Connoisseurs</h2>
+                    <p class="text-sm text-obsidian/60 leading-relaxed font-light mb-6">
+                        Decaf Dessert and Coffee Lab represents the deliberate deconstruction of standard commercial coffee spaces. Situated with stunning unobstructed ocean outlooks, our venue is designed as a tranquil architectural escape tailored beautifully for working elite, students, families, and high-end culinary enthusiasts. [Screenshot_2026-06-14-21-04-33-639_com.google.android.apps.maps.jpg, Screenshot_2026-06-14-21-04-37-672_com.google.android.apps.maps.jpg]
+                    </p>
+                    <p class="text-sm text-obsidian/60 leading-relaxed font-light mb-8">
+                        Every single parameter—from individual extraction pressure curves within our manual pour-overs to the structural integrity of our French toasts and premium cheesecakes—is carefully tested within our culinary lab to guarantee unparalleled hospitality.
+                    </p>
+                    <div class="flex items-center gap-8">
+                        <div>
+                            <span class="font-serif text-3xl text-brass block">07:00</span>
+                            <span class="text-[10px] text-obsidian/40 uppercase tracking-widest font-medium">Opening Hour Daily</span>
+                        </div>
+                        <div class="w-[1px] h-10 bg-obsidian/10"></div>
+                        <div>
+                            <span class="font-serif text-3xl text-brass block">00:00</span>
+                            <span class="text-[10px] text-obsidian/40 uppercase tracking-widest font-medium">Closing Midnight Lounge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Verified Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-obsidian text-cream relative">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-xl tracking-wider text-cream uppercase">Decaf</span>
+                <span class="text-[10px] tracking-[0.25em] text-brass uppercase font-light -mt-1">Dessert & Coffee Lab</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm tracking-wide text-cream/80">
+                <a href="#services" class="hover:text-brass transition-colors">The Concept</a>
+                <a href="#menu" class="hover:text-brass transition-colors">The Lab Menu</a>
+                <a href="#about" class="hover:text-brass transition-colors">Our Story</a>
+                <a href="#testimonials" class="hover:text-brass transition-colors">Reviews</a>
+            </div>
+            <div>
+                <a href="#reserve" class="inline-flex items-center justify-center bg-brass hover:bg-brass/90 text-obsidian px-6 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 rounded-none shadow-lg">
+                    Secure A Table
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Luxury Hero Section -->
+    <section class="relative min-h-screen bg-obsidian flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(197,168,128,0.12)_0%,transparent_70%)]"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-brass/5 blur-3xl bg-glow"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-brass/5 blur-3xl bg-glow" style="animation-delay: -4s;"></div>
+        
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10 py-12">
+            <span class="text-xs uppercase font-semibold tracking-[0.3em] text-brass mb-6 inline-block">An Artisanal Gastronomic Sanctuary</span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl text-cream leading-[1.1] mb-8 tracking-tight">
+                Where Culinary Chemistry <br><span class="italic text-brass font-normal">Meets Beachfront Serenity</span>
+            </h1>
+            <p class="text-cream/60 max-w-2xl mx-auto text-base sm:text-lg font-light leading-relaxed mb-12">
+                Indulge in a premium, custom-designed sensory experience in RAK. From hand-crafted V60 extractions to bespoke, artisanal pastry creations served directly alongside panoramic sea vistas.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#menu" class="w-full sm:w-auto px-8 py-4 bg-brass hover:bg-brass/90 text-obsidian font-semibold text-xs uppercase tracking-widest transition-all duration-300">
+                    Explore Laboratory Menu
+                </a>
+                <a href="#reserve" class="w-full sm:w-auto px-8 py-4 border border-cream/20 hover:border-brass text-cream hover:text-brass font-semibold text-xs uppercase tracking-widest transition-all duration-300">
+                    Request Lounge Booking
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-cream/30 text-xs tracking-widest uppercase flex items-center gap-2 animate-bounce">
+            Scroll to Experience <i class="fa-solid fa-arrow-down text-brass text-[10px]"></i>
+        </div>
+    </section>
+
+    <!-- Value Propositions & Experience Sections -->
+    <section id="services" class="py-24 bg-cream border-b border-brass/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-20">
+                <span class="text-xs uppercase tracking-[0.25em] text-brass font-semibold block mb-3">Curated Gastronomy</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-obsidian">The Lab Experience Pillars</h2>
+                <div class="w-12 h-[1px] bg-brass mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Pillar 1 -->
+                <div class="p-8 bg-white border border-brass/5 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(197,168,128,0.08)]">
+                    <div class="w-12 h-12 bg-obsidian text-brass flex items-center justify-center text-lg mb-8">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-4 text-obsidian">Precision Coffee Lab</h3>
+                    <p class="text-sm text-obsidian/60 leading-relaxed font-light">
+                        Experience bespoke manual brewing configurations including cold drop peaches, Chemex extractions, and signature hand-sourced Brazilian and Ethiopian single-origin beans.
+                    </p>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="p-8 bg-white border border-brass/5 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(197,168,128,0.08)]">
+                    <div class="w-12 h-12 bg-obsidian text-brass flex items-center justify-center text-lg mb-8">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-4 text-obsidian">Artisanal Patisserie</h3>
+                    <p class="text-sm text-obsidian/60 leading-relaxed font-light">
+                        From our iconic Tiramisu Burnt Bliss to Madagascar Vanilla Basque Cheesecakes, each structural layer is crafted to deliver complex, elegant dessert flavor curves.
+                    </p>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="p-8 bg-white border border-brass/5 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(197,168,128,0.08)]">
+                    <div class="w-12 h-12 bg-obsidian text-brass flex items-center justify-center text-lg mb-8">
+                        <i class="fa-solid fa-umbrella-beach"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-4 text-obsidian">Oceanfront Lounge</h3>
+                    <p class="text-sm text-obsidian/60 leading-relaxed font-light">
+                        Unwind completely within premium architectural surroundings featuring an outdoor sunset patio terrace, private dining options, and a pristine structural sea view.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated Interactive Menu Section -->
+    <section id="menu" class="py-24 bg-clay text-cream relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.25em] text-brass font-semibold block mb-3">The Laboratory Codex</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-cream">Featured Masterpieces</h2>
+                </div>
+                <p class="text-cream/50 max-w-md text-sm font-light leading-relaxed mt-4 md:mt-0">
+                    A strictly curated sample from our comprehensive daily culinary registry, optimizing taste profiles across savory and sweet chemistry.
+                </p>
+            </div>
+
+            <!-- Custom Tab Grid Showcase -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Signature Savory Group -->
+                <div>
+                    <h3 class="font-serif text-xl text-brass mb-8 border-b border-cream/10 pb-2 flex justify-between items-center">
+                        <span>Premium Sandwiches & Main Course</span>
+                        <span class="text-xs tracking-widest uppercase font-sans text-cream/40 font-light">Savory Selection</span>
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Signature Wagyu Beef Burger</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 58.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Wagyu Beef, American Cheese, Shallots, Unsalted Butter, Secret house sauce, served in a premium Brioche Bun with Skinny Fries.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Premium Wagyu Platter</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 126.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Tender Wagyu Beef paired with fresh broccoli, white mushrooms, baby potatoes, crispy potato scales, garlic, fresh thyme, and cracked black pepper.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Chicken Katsu Sando</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 52.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Crispy breaded chicken breast paired beautifully with fresh house coleslaw and golden skinny fries inside our homemade signature brioche bun.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signature Sweet Group -->
+                <div>
+                    <h3 class="font-serif text-xl text-brass mb-8 border-b border-cream/10 pb-2 flex justify-between items-center">
+                        <span>Bespoke Manual Brews & Desserts</span>
+                        <span class="text-xs tracking-widest uppercase font-sans text-cream/40 font-light">Sweet Chemistry</span>
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Tiramisu Burnt Bliss</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 41.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Indulgent layers of espresso-soaked ladyfingers combined with velvety mascarpone and a sophisticated twist of caramelized burnt sugar.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Vanilla Basque Cheesecake</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 41.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Creamy dense Basque cheesecake infused completely with authentic Madagascar vanilla beans, delivering a rich caramelized exterior and silky custard core.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg group-hover:text-brass transition-colors">Iced V60 Vanilla Taba</h4>
+                                <span class="w-12 h-[1px] bg-cream/10 flex-grow mx-4"></span>
+                                <span class="font-sans text-sm text-brass font-medium">AED 44.00</span>
+                            </div>
+                            <p class="text-xs text-cream/50 font-light leading-relaxed">Hand-crafted signature cold pour-over coffee cleanly extracted and subtly infused with smooth vanilla aromatic notes and a rich Taba structure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="text-xs text-cream/40 mb-4 font-light">Want to browse our complete catalog of hot coffees, together boxes, smoothies, and breakfast balances?</p>
+                <button onclick="openPremiumChat('Can you provide me with the full menu pricing?')" class="inline-flex items-center gap-2 text-xs font-semibold text-brass uppercase tracking-widest hover:text-cream transition-colors">
+                    Request Full Digital Menu Registry <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story / About Section -->
+    <section id="about" class="py-24 bg-cream overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -top-8 -left-8 w-32 h-32 border-t-2 border-l-2 border-brass/30"></div>
+                    <div class="bg-obsidian p-12 text-cream space-y-6 relative z-10 shadow-2xl">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-brass block font-semibold">Architectural Highlights</span>
+                        <ul class="space-y-4 text-xs tracking-wide text-cream/80 font-light">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brass text-[8px]"></i> Panoramic Open Ocean & Beach Views</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brass text-[8px]"></i> Rooftop Lounge & Ambient Outdoor Patio</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brass text-[8px]"></i> Premium Late-Night Dining and Artisan Coffee</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brass text-[8px]"></i> Ample Free On-Site Protected Parking Spaces</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:col-span-7">
+                    <span class="text-xs uppercase tracking-[0.25em] text-brass font-semibold block mb-3">The Narrative Lab</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-obsidian mb-6">A Refined Escape Crafted For Taste Connoisseurs</h2>
+                    <p class="text-sm text-obsidian/60 leading-relaxed font-light mb-6">
+                        Decaf Dessert and Coffee Lab represents the deliberate deconstruction of standard commercial coffee spaces. Situated with stunning unobstructed ocean outlooks, our venue is designed as a tranquil architectural escape tailored beautifully for working elite, students, families, and high-end culinary enthusiasts. [Screenshot_2026-06-14-21-04-33-639_com.google.android.apps.maps.jpg, Screenshot_2026-06-14-21-04-37-672_com.google.android.apps.maps.jpg]
+                    </p>
+                    <p class="text-sm text-obsidian/60 leading-relaxed font-light mb-8">
+                        Every single parameter—from individual extraction pressure curves within our manual pour-overs to the structural integrity of our French toasts and premium cheesecakes—is carefully tested within our culinary lab to guarantee unparalleled hospitality.
+                    </p>
+                    <div class="flex items-center gap-8">
+                        <div>
+                            <span class="font-serif text-3xl text-brass block">07:00</span>
+                            <span class="text-[10px] text-obsidian/40 uppercase tracking-widest font-medium">Opening Hour Daily</span>
+                        </div>
+                        <div class="w-[1px] h-10 bg-obsidian/10"></div>
+                        <div>
+                            <span class="font-serif text-3xl text-brass block">00:00</span>
+                            <span class="text-[10px] text-obsidian/40 uppercase tracking-widest font-medium">Closing Midnight Lounge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Verified Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-obsidian text-cream relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-20">
+                <span class="text-xs uppercase tracking-[0.25em] text-brass font-semibold block mb-3">Authentic Reviews</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-cream">Verified Guest Chronicles</h2>
+                <div class="w-12 h-[1px] bg-brass mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="p-8 border border-cream/10 bg-clay/50 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-brass text-xs mb-6">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs text-cream/70 leading-relaxed font-light italic mb-6">
+                            "Great Place. Excellent French toast and cheesecake. Outstanding coffee. Atmosphere, food, and service are top-tier." [Screenshot_2026-06-14-21-05-33-763_com.google.android.apps.maps.jpg]
+                        </p>
+                    </div>
+                    <div class="border-t border-cream/5 pt-4 flex items-center justify-between">
+                        <span class="text-xs font-semibold tracking-wide text-cream">Mustafa Pracha</span>
+                        <span class="text-[10px] text-brass uppercase font-mono tracking-widest">Local Guide</span>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="p-8 border border-cream/10 bg-clay/50 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-brass text-xs mb-6">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs text-cream/70 leading-relaxed font-light italic mb-6">
+                            "We had a wonderful time at this café. The view facing the sea was absolutely beautiful and very relaxing—perfect for unwinding. The staff were also very accommodating and friendly!"
+                        </p>
+                    </div>
+                    <div class="border-t border-cream/5 pt-4 flex items-center justify-between">
+                        <span class="text-xs font-semibold tracking-wide text-cream">Mrs. Alblooshi</span>
+                        <span class="text-[10px] text-brass uppercase font-mono tracking-widest">Local Guide</span>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="p-8 border border-cream/10 bg-clay/50 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-brass text-xs mb-6">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs text-cream/70 leading-relaxed font-light italic mb-6">
+                            "Decaf Caffe is such a lovely place with a cozy atmosphere and great vibes. The coffee and overall experience were excellent, but what truly made my visit special was Rebecca, the waitress. Her hospitality, positive energy, and warm smile made us feel truly welcome."
+                        </p>
+                    </div>
+                    <div class="border-t border-cream/5 pt-4 flex items-center justify-between">
+                        <span class="text-xs font-semibold tracking-wide text-cream">Lana Baker</span>
+                        <span class="text-[10px] text-brass uppercase font-mono tracking-widest">Local Guide</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversion Optimized Form Section -->
+    <section id="reserve" class="py-24 bg-cream relative">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-brass font-semibold block mb-3">Lounge Placements</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-obsidian">Request A Table Priority Placement</h2>
+                <div class="w-12 h-[1px] bg-brass mx-auto mt-4"></div>
+            </div>
+
+            <form onsubmit="handleFormSubmit(event)" class="space-y-6 bg-white p-10 border border-brass/10 shadow-[0_30px_60px_rgba(0,0,0,0.02)]">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-obsidian/40 font-semibold mb-2">Full Name</label>
+                        <input type="text" required class="w-full bg-cream/50 border border-obsidian/10 px-4 py-3 text-sm focus:outline-none focus:border-brass transition-colors rounded-none">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-obsidian/40 font-semibold mb-2">Phone Number</label>
+                        <input type="tel" required class="w-full bg-cream/50 border border-obsidian/10 px-4 py-3 text-sm focus:outline-none focus:border-brass transition-colors rounded-none">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-obsidian/40 font-semibold mb-2">Date Request</label>
+                        <input type="date" required class="w-full bg-cream/50 border border-obsidian/10 px-4 py-3 text-sm focus:outline-none focus:border-brass transition-colors rounded-none">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-obsidian/40 font-semibold mb-2">Time Slot Selection</label>
+                        <select required class="w-full bg-cream/50 border border-obsidian/10 px-4 py-3 text-sm focus:outline-none focus:border-brass transition-colors rounded-none">
+                            <option>Brunch (09:00 - 12:00)</option>
+                            <option>Lunch / Sea Sunset (13:00 - 18:00)</option>
+                            <option>Late Night Lounge (19:00 - 23:30)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-obsidian/40 font-semibold mb-2">Seating Preference</label>
+                        <select required class="w-full bg-cream/50 border border-obsidian/10 px-4 py-3 text-sm focus:outline-none focus:border-brass transition-colors rounded-none">
+                            <option>Outdoor Sunset Patio Terrace</option>
+                            <option>Indoor Panoramic Seaview Lounge</option>
+                            <option>Private Dining Suite Room</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[10px] uppercase tracking-widest text-obsidian/40 font-semibold mb-2">Special Chemistry or Dietary Requirements</label>
+                    <textarea rows="3" class="w-full bg-cream/50 border border-obsidian/10 px-4 py-3 text-sm focus:outline-none focus:border-brass transition-colors rounded-none placeholder:text-obsidian/20" placeholder="E.g., Gluten-free alignment, birthday arrangements, etc..."></textarea>
+                </div>
+                <div class="pt-4">
+                    <button type="submit" class="w-full py-4 bg-obsidian hover:bg-obsidian/90 text-cream text-xs uppercase tracking-widest font-semibold transition-colors">
+                        Dispatch Reservation Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Luxury Footer -->
+    <footer class="bg-obsidian text-cream/40 text-xs py-12 border-t border-brass/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <p class="font-serif text-sm tracking-widest text-cream uppercase mb-1">DECAF</p>
+                <p class="font-light text-[10px] tracking-wide">© 2026 Decaf Dessert and Coffee Lab. All Rights Safeguarded.</p>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="#services" class="hover:text-brass transition-colors">Concept</a>
+                <a href="#menu" class="hover:text-brass transition-colors">Lab Codex</a>
+                <a href="#reserve" class="hover:text-brass transition-colors">Reservations</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- FLOATING PREMIUM AI CHATBOT INTERFACE -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Chat Bubble Trigger Button -->
+        <button id="chatTrigger" onclick="togglePremiumChat()" class="w-14 h-14 bg-obsidian text-brass rounded-full flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 relative border border-brass/20 group">
+            <span class="absolute inset-0 rounded-full bg-brass/10 animate-ping group-hover:hidden"></span>
+            <i id="triggerIcon" class="fa-solid fa-comment-medical text-xl transition-transform duration-300"></i>
+        </button>
+
+        <!-- Premium Chat Dialog Window Window -->
+        <div id="chatWindow" class="hidden w-[360px] sm:w-[400px] h-[520px] bg-obsidian border border-brass/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col mt-4 transition-all duration-300 transform translate-y-2 opacity-0">
+            <!-- Header Section -->
+            <div class="p-5 border-b border-brass/10 bg-clay flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+                    <div>
+                        <h4 class="font-serif text-sm text-cream tracking-wide">Lab Concierge AI</h4>
+                        <p class="text-[10px] text-brass tracking-widest uppercase font-light">Decaf Virtual Assistant</p>
+                    </div>
+                </div>
+                <button onclick="togglePremiumChat()" class="text-cream/40 hover:text-brass transition-colors">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Dialogue Scroll Core Area -->
+            <div id="chatDialogueArea" class="flex-grow p-5 overflow-y-auto space-y-4 custom-scrollbar bg-obsidian/40">
+                <!-- Concierge Greeting Message -->
+                <div class="flex items-start space-x-3">
+                    <div class="min-w-[24px] h-6 bg-brass text-obsidian text-[10px] rounded-none flex items-center justify-center font-bold">AI</div>
+                    <div class="bg-clay p-3.5 text-xs text-cream/90 leading-relaxed font-light max-w-[85%] border border-cream/5">
+                        Salutations. Welcome to the **Decaf Dessert and Coffee Lab** digital concierge. How may I guide your sensory journey today?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contextual Quick Reply Suggestion Carousel Container -->
+            <div class="p-3 border-t border-brass/10 bg-clay/30 flex gap-2 overflow-x-auto custom-scrollbar whitespace-nowrap">
+                <button onclick="triggerQuickReply('What are your premium services and pricing metrics?')" class="px-3 py-1.5 bg-clay border border-brass/20 text-cream/70 text-[10px] tracking-wide font-light hover:text-brass hover:border-brass transition-all">📋 Pricing & Menu</button>
+                <button onclick="triggerQuickReply('What are your operational hours & location parameters?')" class="px-3 py-1.5 bg-clay border border-brass/20 text-cream/70 text-[10px] tracking-wide font-light hover:text-brass hover:border-brass transition-all">📍 Hours & Location</button>
+                <button onclick="triggerQuickReply('How do I complete a priority booking call?')" class="px-3 py-1.5 bg-clay border border-brass/20 text-cream/70 text-[10px] tracking-wide font-light hover:text-brass hover:border-brass transition-all">✨ Reservation Process</button>
+            </div>
+
+            <!-- Input Management Bar Container -->
+            <div class="p-4 border-t border-brass/10 bg-clay flex items-center space-x-2">
+                <input type="text" id="chatInputField" onkeypress="handleChatEnter(event)" placeholder="Formulate an inquiry..." class="flex-grow bg-obsidian border border-brass/10 px-4 py-2.5 text-xs text-cream focus:outline-none focus:border-brass placeholder:text-cream/25 rounded-none">
+                <button onclick="processUserChatInquiry()" class="w-9 h-9 bg-brass hover:bg-brass/90 text-obsidian flex items-center justify-center text-xs transition-colors">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PREMIUM INTERACTIVE CHATLOGIC ARCHITECTURE ENGINE -->
+    <script>
+        // Core Business Knowledge Base Base parameters
+        const decafKnowledgeBase = {
+            pricing: `Our curated lab pricing models include:
+• **Premium Wagyu Platter:** AED 126.00
+• **Signature Beef Burger:** AED 58.00
+• **Chicken Katsu Sando:** AED 52.00
+• **Tiramisu Burnt Bliss:** AED 41.00
+• **Vanilla Basque Cheese:** AED 41.00
+• **Iced V60 Vanilla Taba:** AED 44.00
+• **Cold Brew Peach:** AED 31.00`,
+            hours: `We operate meticulously across the entire week:
+• **Monday – Sunday:** 07:00 AM – 12:00 Midnight
+*(Please note: Hours might vary slightly on Islamic New Year shifts)*`,
+            location: `Our coastal lab structure is located directly on the **beachfront waterfront in Ras Al Khaimah (RAK)**. We feature stunning open sea views, rooftop lounge platforms, and a massive on-site parking zone completely free of charge for our guests.`,
+            booking: `To secure your placement:
+1. Scroll to our **Priority Placement Registry Form** on this page.
+2. Complete your personal parameters and seating requests (Sunset Patio vs Indoor Panoramic Seaview).
+3. Alternatively, submit your exact phone contact via this AI prompt box, and our creative concierge director will call you instantly to lock in your suite table alignment.`
+        };
+
+        function togglePremiumChat() {
+            const windowEl = document.getElementById('chatWindow');
+            const iconEl = document.getElementById('triggerIcon');
+            
+            if(windowEl.classList.contains('hidden')) {
+                windowEl.classList.remove('hidden');
+                setTimeout(() => {
+                    windowEl.classList.remove('translate-y-2', 'opacity-0');
+                }, 50);
+                iconEl.className = "fa-solid fa-comments text-xl text-brass";
+            } else {
+                windowEl.classList.add('translate-y-2', 'opacity-0');
+                setTimeout(() => {
+                    windowEl.classList.add('hidden');
+                }, 300);
+                iconEl.className = "fa-solid fa-comment-medical text-xl";
+            }
+        }
+
+        function openPremiumChat(prefillText) {
+            const windowEl = document.getElementById('chatWindow');
+            if(windowEl.classList.contains('hidden')) togglePremiumChat();
+            document.getElementById('chatInputField').value = prefillText;
+            processUserChatInquiry();
+        }
+
+        function triggerQuickReply(promptText) {
+            document.getElementById('chatInputField').value = promptText;
+            processUserChatInquiry();
+        }
+
+        function handleChatEnter(e) {
+            if(e.key === 'Enter') processUserChatInquiry();
+        }
+
+        function processUserChatInquiry() {
+            const inputEl = document.getElementById('chatInputField');
+            const queryText = inputEl.value.trim();
+            if(!queryText) return;
+
+            // Render User Bubble
+            appendChatBubble(queryText, 'user');
+            inputEl.value = '';
+
+            // Render Typing Element Animation State Placeholder
+            const typingId = appendTypingIndicator();
+
+            // Simulate Premium Conversational Delay Response Curving
+            setTimeout(() => {
+                removeTypingIndicator(typingId);
+                const normalized = queryText.toLowerCase();
+                let outputResponse = "I have acknowledged your transmission. To guarantee an exceptional beachfront table setup, I highly recommend submitting a priority request inside our secure form block or leaving your phone line here.";
+
+                if(normalized.includes('price') || normalized.includes('menu') || normalized.includes('dish') || normalized.includes('sweet')) {
+                    outputResponse = decafKnowledgeBase.pricing;
+                } else if(normalized.includes('hour') || normalized.includes('time') || normalized.includes('open')) {
+                    outputResponse = decafKnowledgeBase.hours;
+                } else if(normalized.includes('location') || normalized.includes('area') || normalized.includes('where') || normalized.includes('rak') || normalized.includes('sea')) {
+                    outputResponse = decafKnowledgeBase.location;
+                } else if(normalized.includes('book') || normalized.includes('reserve') || normalized.includes('call') || normalized.includes('seat')) {
+                    outputResponse = decafKnowledgeBase.booking;
+                }
+
+                appendChatBubble(outputResponse, 'ai');
+            }, 1100);
+        }
+
+        function appendChatBubble(text, sender) {
+            const dialogueArea = document.getElementById('chatDialogueArea');
+            const wrap = document.createElement('div');
+            wrap.className = sender === 'user' ? 'flex items-start space-x-3 justify-end' : 'flex items-start space-x-3';
+
+            const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+
+            if(sender === 'user') {
+                wrap.innerHTML = `
+                    <div class="bg-brass p-3.5 text-xs text-obsidian font-medium max-w-[85%] border border-brass/10">
+                        ${formattedText}
+                    </div>
+                `;
+            } else {
+                wrap.innerHTML = `
+                    <div class="min-w-[24px] h-6 bg-brass text-obsidian text-[10px] rounded-none flex items-center justify-center font-bold">AI</div>
+                    <div class="bg-clay p-3.5 text-xs text-cream/90 leading-relaxed font-light max-w-[85%] border border-cream/5">
+                        ${formattedText}
+                    </div>
+                `;
+            }
+            dialogueArea.appendChild(wrap);
+            dialogueArea.scrollTop = dialogueArea.scrollHeight;
+        }
+
+        function appendTypingIndicator() {
+            const dialogueArea = document.getElementById('chatDialogueArea');
+            const indicatorId = 'typing_' + Date.now();
+            const wrap = document.createElement('div');
+            wrap.id = indicatorId;
+            wrap.className = 'flex items-start space-x-3';
+            wrap.innerHTML = `
+                <div class="min-w-[24px] h-6 bg-brass text-obsidian text-[10px] rounded-none flex items-center justify-center font-bold">AI</div>
+                <div class="bg-clay px-4 py-3 text-xs text-cream/40 max-w-[85%] border border-cream/5 flex items-center space-x-1">
+                    <span class="w-1.5 h-1.5 bg-cream/40 rounded-full animate-bounce"></span>
+                    <span class="w-1.5 h-1.5 bg-cream/40 rounded-full animate-bounce" style="animation-delay:0.2s"></span>
+                    <span class="w-1.5 h-1.5 bg-cream/40 rounded-full animate-bounce" style="animation-delay:0.4s"></span>
+                </div>
+            `;
+            dialogueArea.appendChild(wrap);
+            dialogueArea.scrollTop = dialogueArea.scrollHeight;
+            return indicatorId;
+        }
+
+        function removeTypingIndicator(id) {
+            const indicator = document.getElementById(id);
+            if(indicator) indicator.remove();
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert("System Success: Your priority placement ticket has been locked into our database. Our lifestyle director will confirm via text or call shortly.");
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
